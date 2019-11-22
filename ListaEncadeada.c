@@ -104,16 +104,12 @@ No* remover_do_indice(No *lista, int indice){
 		lista = auxiliar->prox;
 	}
 	else{
-		if(auxiliar->prox == NULL){
-			lista = NULL;
-		}
-		else{
-				while(contador < indice-1 && auxiliar->prox->prox!=NULL){
-				auxiliar = auxiliar->prox;
-				contador++;
-	   	   	}
-	   		auxiliar->prox = auxiliar->prox->prox;
-	   	}
+		while(contador < indice-1 && auxiliar->prox->prox!=NULL){
+			auxiliar = auxiliar->prox;
+			contador++;
+  	   	}
+		auxiliar->prox = auxiliar->prox->prox;
+
 	}
 
 	return lista;
@@ -146,6 +142,6 @@ int main(){
 	lista = inserir_no_indice(lista,70, 4);
 	imprimir_lista(lista);
 	
-	lista = remover_do_indice(lista, 4);
+	lista = remover_do_indice(lista, 3);
 	imprimir_lista(lista);
 }
